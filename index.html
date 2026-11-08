@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Bhoomipujan & Shilanyas Ceremony | Winsteel Engineering Works Pvt Ltd</title>
+  <meta name="description" content="You are cordially invited to the Bhoomipujan & Shilanyas Ceremony (Foundation Stone Laying) of Winsteel Engineering Works Pvt Ltd on 25th November 2026, 8:30 AM onwards at Vesma, Navsari." />
+  <meta name="theme-color" content="#5a0f1c" />
+
+  <!-- Open Graph (WhatsApp / social share preview) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bhoomipujan & Shilanyas Ceremony – Winsteel Engineering Works" />
+  <meta property="og:description" content="Wednesday, 25th November 2026 · 8:30 AM onwards, followed by Lunch · Block No. 266, NH 48, Vesma, Jalalpore, Navsari" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="locked">
+
+  <!-- Falling petals / sparkles -->
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <!-- ============ INTRO / GATE ============ -->
+  <div id="gate" class="gate" role="dialog" aria-label="Open invitation">
+    <div class="gate-door gate-left"><div class="door-pattern"></div></div>
+    <div class="gate-door gate-right"><div class="door-pattern"></div></div>
+
+    <div class="gate-content">
+      <div class="gate-om">॥ श्री ॥</div>
+      <div class="logo-badge gate-badge"><img src="assets/logo.png" alt="Winsteel Engineering Works Pvt. Ltd." class="gate-logo" /></div>
+      <p class="gate-small">You are invited to</p>
+      <h1 class="gate-title">Bhoomipujan<br /><span>&amp;</span> Shilanyas</h1>
+      <p class="gate-guest" id="guestName"></p>
+      <button id="openBtn" class="btn-open">
+        <span class="seal"><img src="assets/emblem.png" alt="" /></span>
+        <span>Open Invitation</span>
+      </button>
+      <p class="gate-hint">Tap to open</p>
+    </div>
+  </div>
+
+  <!-- ============ MAIN ============ -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="mandala mandala-1" aria-hidden="true"></div>
+      <div class="mandala mandala-2" aria-hidden="true"></div>
+
+      <div class="deities reveal">
+        <div class="deity">
+          <div class="deity-ring"><span class="deva">श्री गणेशाय नमः</span></div>
+          <small>Shri Ganeshji</small>
+        </div>
+        <div class="deity deity-center">
+          <div class="deity-ring big"><span class="deva">श्री महावीर स्वामी</span></div>
+          <small>Mahavir Swami</small>
+        </div>
+        <div class="deity">
+          <div class="deity-ring"><span class="deva">श्री लक्ष्म्यै नमः</span></div>
+          <small>Shri Laxmiji</small>
+        </div>
+      </div>
+
+      <!-- Kalash -->
+      <div class="kalash-wrap reveal">
+        <svg class="kalash" viewBox="0 0 200 230" aria-label="Kalash">
+          <defs>
+            <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#fff3b0" />
+              <stop offset=".45" stop-color="#e6b93b" />
+              <stop offset="1" stop-color="#9c6a12" />
+            </linearGradient>
+            <linearGradient id="leaf" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#7cc35a" />
+              <stop offset="1" stop-color="#2f6b1e" />
+            </linearGradient>
+            <radialGradient id="coco" cx=".4" cy=".35" r=".7">
+              <stop offset="0" stop-color="#c7884b" />
+              <stop offset="1" stop-color="#6b3a16" />
+            </radialGradient>
+          </defs>
+          <!-- mango leaves -->
+          <g class="leaves">
+            <path d="M100 78 C70 60 45 62 28 74 C50 78 72 80 100 82Z" fill="url(#leaf)" />
+            <path d="M100 78 C130 60 155 62 172 74 C150 78 128 80 100 82Z" fill="url(#leaf)" />
+            <path d="M100 76 C80 50 60 42 42 44 C60 58 78 70 100 80Z" fill="url(#leaf)" />
+            <path d="M100 76 C120 50 140 42 158 44 C140 58 122 70 100 80Z" fill="url(#leaf)" />
+            <path d="M100 76 C92 48 84 34 70 26 C78 46 88 62 100 80Z" fill="url(#leaf)" />
+            <path d="M100 76 C108 48 116 34 130 26 C122 46 112 62 100 80Z" fill="url(#leaf)" />
+          </g>
+          <!-- coconut -->
+          <ellipse cx="100" cy="58" rx="24" ry="30" fill="url(#coco)" />
+          <path d="M100 28 C96 20 104 14 100 6" stroke="#8a5a2b" stroke-width="3" fill="none" stroke-linecap="round" />
+          <!-- pot -->
+          <path d="M70 84 H130 L124 98 C160 112 170 150 150 180 C138 198 120 206 100 206 C80 206 62 198 50 180 C30 150 40 112 76 98Z" fill="url(#gold)" stroke="#8a5a10" stroke-width="2" />
+          <rect x="66" y="80" width="68" height="10" rx="4" fill="url(#gold)" stroke="#8a5a10" stroke-width="2" />
+          <path d="M52 140 Q100 160 148 140" stroke="#b3122e" stroke-width="6" fill="none" />
+          <path d="M52 140 Q100 160 148 140" stroke="#ffd36b" stroke-width="2" stroke-dasharray="2 6" fill="none" />
+          <!-- swastik-free auspicious mark: dot rangoli -->
+          <circle cx="100" cy="176" r="9" fill="#b3122e" />
+          <circle cx="100" cy="176" r="4" fill="#ffd36b" />
+          <circle cx="80" cy="172" r="3" fill="#b3122e" />
+          <circle cx="120" cy="172" r="3" fill="#b3122e" />
+          <ellipse cx="100" cy="214" rx="56" ry="8" fill="#000" opacity=".18" />
+        </svg>
+        <div class="kalash-glow"></div>
+      </div>
+
+      <div class="mantra reveal">
+        <p class="mantra-title">॥ नमोकार मंत्र ॥</p>
+        <p class="deva-lines">
+          <span>णमो अरिहंताणं ॥</span> <span>णमो सिद्धाणं ॥</span> <span>णमो आयरियाणं ॥</span><br class="br-desk" />
+          <span>णमो उवज्झायाणं ॥</span> <span>णमो लोए सव्व साहूणं ॥</span>
+        </p>
+      </div>
+
+      <h2 class="hero-title reveal">
+        <span class="line">Bhoomipujan</span>
+        <span class="amp">&amp;</span>
+        <span class="line">Shilanyas Ceremony</span>
+      </h2>
+      <p class="hero-sub reveal">( Foundation Stone Laying )</p>
+
+      <a href="#invite" class="scroll-down" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- INVITATION TEXT -->
+    <section class="section invite" id="invite">
+      <div class="card ornate reveal">
+        <div class="corner tl"></div><div class="corner tr"></div>
+        <div class="corner bl"></div><div class="corner br"></div>
+
+        <p class="lead">
+          We cordially invite you to grace the auspicious occasion of the
+          <strong>Bhoomipujan &amp; Shilanyas Ceremony</strong>
+          <em>(Foundation Stone Laying)</em> of our new project of
+        </p>
+
+        <img src="assets/logo.png" alt="Winsteel Engineering Works Pvt. Ltd. – Forming The Future" class="main-logo" />
+
+        <h3 class="company">Winsteel Engineering Works Pvt Ltd</h3>
+
+        <div class="divider"><span>✦</span></div>
+
+        <p class="blessing">
+          The ceremony will be performed by the auspicious hands and with the
+          blessings of our respected parents
+        </p>
+        <p class="parents">
+          Shri Bhupendra Chimanlal Shah
+          <span>&amp;</span>
+          Smt. Devendra Bhupendra Shah
+        </p>
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section details" id="details">
+      <h2 class="section-title reveal">Save the Date</h2>
+
+      <div class="date-hero reveal">
+        <div class="dh-side">Wednesday</div>
+        <div class="dh-mid">
+          <span class="dh-month">November</span>
+          <span class="dh-day">25</span>
+          <span class="dh-year">2026</span>
+        </div>
+        <div class="dh-side">8:30 AM</div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info reveal">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          </div>
+          <h4>Date</h4>
+          <p>25<sup>th</sup> November 2026<br />Wednesday</p>
+        </div>
+        <div class="info reveal">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h4>Muhurat</h4>
+          <p>8:30 AM onwards</p>
+        </div>
+        <div class="info reveal">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 3v7a3 3 0 0 0 3 3v8M7 3v6M10 3v7a3 3 0 0 1-3 3M17 21V3c-2 0-4 2-4 6v5h4"/></svg>
+          </div>
+          <h4>Followed by</h4>
+          <p>Lunch</p>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown reveal" id="countdown">
+        <div class="cd"><span id="cd-days">00</span><small>Days</small></div>
+        <div class="cd"><span id="cd-hours">00</span><small>Hours</small></div>
+        <div class="cd"><span id="cd-mins">00</span><small>Minutes</small></div>
+        <div class="cd"><span id="cd-secs">00</span><small>Seconds</small></div>
+      </div>
+      <p class="cd-done" id="cdDone" hidden>🙏 The auspicious day is here! 🙏</p>
+
+      <div class="btn-row reveal">
+        <a class="btn" id="gcalBtn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
+          Add to Google Calendar
+        </a>
+        <button class="btn btn-ghost" id="icsBtn">
+          <svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+          Download .ics
+        </button>
+      </div>
+    </section>
+
+    <!-- HOSTS -->
+    <section class="section hosts" id="hosts">
+      <div class="host-block reveal">
+        <p class="label">Invitee</p>
+        <h3 class="host-name">Minal &amp; Jaydeep Shah</h3>
+      </div>
+
+      <div class="divider reveal"><span>❖</span></div>
+
+      <div class="host-block reveal">
+        <p class="label">Well Wishers</p>
+        <ul class="wishers">
+          <li>Dr. Ajay Shah</li>
+          <li>Dr. Jayshree Shah</li>
+          <li>Adv. Nilam Shah</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMPLIMENTS -->
+    <section class="section compliments" id="compliments">
+      <p class="label reveal">With Best Compliments From</p>
+      <div class="marquee reveal">
+        <div class="marquee-track">
+          <span>L&amp;T</span><i>✦</i><span>AFCONS</span><i>✦</i><span>NEC</span><i>✦</i><span>TKIL</span><i>✦</i><span>KPIL</span><i>✦</i>
+          <span>L&amp;T</span><i>✦</i><span>AFCONS</span><i>✦</i><span>NEC</span><i>✦</i><span>TKIL</span><i>✦</i><span>KPIL</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section class="section venue" id="venue">
+      <h2 class="section-title reveal">Venue</h2>
+
+      <div class="venue-card reveal">
+        <div class="venue-info">
+          <div class="pin">
+            <svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          </div>
+          <h3>Winsteel Engineering Works Pvt Ltd</h3>
+          <p>Block No. 266, NH 48,<br />Vesma, Jalalpore,<br />Navsari, Gujarat</p>
+
+          <div class="btn-row">
+            <a class="btn" href="https://maps.app.goo.gl/5LwypVbVMKKsPv8y5?g_st=iw" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+              Get Directions
+            </a>
+            <button class="btn btn-ghost" id="copyAddr">
+              <svg viewBox="0 0 24 24"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+              <span>Copy Address</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            title="Winsteel Engineering Works location"
+            src="https://www.google.com/maps?q=21.0257347,72.9711036&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-deva">॥ शुभम् भवतु ॥</p>
+      <p class="footer-text">Your gracious presence will make this occasion truly special.</p>
+      <button class="btn" id="shareBtn">
+        <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.4 17.3L2 22l4.8-1.3A11 11 0 0 0 20.5 3.5z"/><path d="M8.5 8.5c0 4 3 7 7 7l1.5-1.5-2-1-1 1c-1.5-.5-3-2-3.5-3.5l1-1-1-2z"/></svg>
+        Share on WhatsApp
+      </button>
+      <div class="logo-badge footer-badge"><img src="assets/logo.png" alt="Winsteel Engineering Works Pvt. Ltd." class="footer-logo" /></div>
+      <p class="copy">Winsteel Engineering Works Pvt Ltd · Navsari</p>
+    </footer>
+  </main>
+
+  <!-- Mobile quick-action bar -->
+  <nav class="quickbar" aria-label="Quick actions">
+    <a href="https://maps.app.goo.gl/5LwypVbVMKKsPv8y5?g_st=iw" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      <span>Directions</span>
+    </a>
+    <a href="#details" class="qb-date">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      <span>25 Nov</span>
+    </a>
+    <a href="#" id="qbCal">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
+      <span>Remind Me</span>
+    </a>
+    <button type="button" id="qbShare">
+      <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+      <span>Share</span>
+    </button>
+  </nav>
+
+  <!-- Floating music toggle -->
+  <button id="musicBtn" class="music-btn" aria-label="Toggle music" title="Toggle music">
+    <span class="bars"><i></i><i></i><i></i><i></i></span>
+  </button>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
