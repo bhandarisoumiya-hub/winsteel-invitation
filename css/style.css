@@ -111,7 +111,7 @@ svg { display: block; }
   font-family: var(--f-deva);
   font-size: 1.5rem;
   color: var(--gold-300);
-  letter-spacing: .2em;
+  letter-spacing: .05em;
 }
 /* White plaque so the blue/yellow logo reads on maroon */
 .logo-badge {
@@ -535,7 +535,7 @@ main { position: relative; z-index: 1; }
 }
 .footer-deva { font-family: var(--f-deva); font-size: 1.6rem; color: var(--gold-300); }
 .footer-text { font-style: italic; font-size: 1.3rem; color: var(--muted); margin: .6rem auto 1.6rem; max-width: 520px; }
-.footer-badge { margin: 2.4rem auto .9rem; }
+.footer-badge { display: block; width: fit-content; margin: 2.4rem auto .9rem; }
 .footer-logo { width: 130px; height: auto; }
 .copy { font-family: var(--f-sans); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); opacity: .7; }
 
@@ -589,29 +589,153 @@ body.opened .music-btn { opacity: 1; transform: scale(1); pointer-events: auto; 
 @keyframes pinBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @keyframes eq { 0%, 100% { height: 25%; } 50% { height: 100%; } }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- QUICK BAR (mobile) ---------- */
+.quickbar { display: none; }
+
+/* ---------- GENERAL TOUCH ---------- */
+a, button { -webkit-tap-highlight-color: transparent; }
+.gate, .hero { min-height: 100dvh; }
+.deva-lines span { white-space: nowrap; }
+
+/* ---------- TABLET & PHONE ---------- */
 @media (max-width: 760px) {
+  body { background-attachment: scroll; font-size: 17px; }
+  .section { padding: 3.5rem 16px; }
+  .section-title { margin-bottom: 1.8rem; }
+
   .venue-card { grid-template-columns: 1fr; text-align: center; }
   .venue-info { align-items: center; }
   .venue-info .btn-row { justify-content: center; }
-  .map-wrap { min-height: 320px; }
+  .map-wrap { min-height: 300px; }
   .mandala-1 { width: 520px; height: 520px; margin: -260px 0 0 -260px; }
-  .section { padding: 4rem 1rem; }
+
   .info-grid { grid-template-columns: 1fr 1fr; gap: .8rem; }
   .info-grid .info:last-child { grid-column: 1 / -1; }
-  .info { padding: 1.5rem .8rem; }
+  .info { padding: 1.4rem .8rem; }
   .info p { font-size: 1.15rem; }
+
+  /* sticky quick-action bar */
+  .quickbar {
+    position: fixed; left: 10px; right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 65;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    padding: 6px;
+    border-radius: 20px;
+    background: rgba(42, 6, 13, .88);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    border: 1px solid rgba(245, 208, 107, .45);
+    box-shadow: 0 14px 40px -10px rgba(0, 0, 0, .8);
+    transform: translateY(160%);
+    transition: transform .6s cubic-bezier(.2, .8, .2, 1) .9s;
+  }
+  body.opened .quickbar { transform: none; }
+  .quickbar a, .quickbar button {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    min-height: 54px;
+    border: 0; background: none; cursor: pointer;
+    color: var(--gold-200); text-decoration: none;
+    font-family: var(--f-sans); font-size: .64rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    border-radius: 14px;
+    transition: background .2s ease;
+  }
+  .quickbar a:active, .quickbar button:active { background: rgba(245, 208, 107, .15); }
+  .quickbar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .quickbar .qb-date { color: var(--maroon-900); background: var(--gold-grad); }
+
+  body.opened { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .music-btn { bottom: calc(92px + env(safe-area-inset-bottom)); right: 14px; width: 46px; height: 46px; }
+  .toast { bottom: calc(96px + env(safe-area-inset-bottom)); }
 }
+
+/* ---------- PHONE ---------- */
 @media (max-width: 480px) {
-  .deities { gap: .7rem; width: 100%; }
+  /* gate */
+  .gate-content { padding: 1.8rem 1.1rem 1.6rem; border-radius: 160px 160px 22px 22px; }
+  .gate-door { box-shadow: inset 0 0 0 6px rgba(0,0,0,.15), inset 0 0 0 8px var(--gold-500), inset 0 0 0 11px rgba(0,0,0,.25), inset 0 0 0 12px var(--gold-300); }
+  .door-pattern { inset: 18px; }
+  .gate-logo { width: 130px; }
+  .gate-title { font-size: 1.85rem; }
+  .btn-open { font-size: .75rem; }
+
+  /* hero */
+  .hero { padding: max(1.6rem, env(safe-area-inset-top)) 16px 4.5rem; }
+  .mandala-1 { width: 440px; height: 440px; margin: -220px 0 0 -220px; }
+  .mandala-2 { width: 240px; height: 240px; top: -80px; right: -100px; }
+  .deities { gap: .6rem; width: 100%; margin-top: .6rem; }
   .deity { flex: 0 1 auto; min-width: 0; }
-  .deity small { font-size: .55rem; letter-spacing: .1em; }
-  .deity-ring { width: 72px; height: 72px; padding: 8px; }
-  .deity-ring.big { width: 92px; height: 92px; }
-  .deva { font-size: .74rem; }
-  .deity-ring.big .deva { font-size: .85rem; }
-  .kalash-wrap { width: 120px; }
-  .btn { padding: .8rem 1.2rem; font-size: .72rem; }
+  .deity small { font-size: .56rem; letter-spacing: .1em; }
+  .deity-ring { width: 74px; height: 74px; padding: 8px; }
+  .deity-ring.big { width: 94px; height: 94px; }
+  .deva { font-size: .76rem; }
+  .deity-ring.big .deva { font-size: .86rem; }
+  .kalash-wrap { width: 112px; }
+  .kalash-glow { width: 170px; height: 170px; }
+  .mantra { margin: .8rem 0 1rem; }
+  .mantra-title { font-size: 1.05rem; }
+  .deva-lines { font-size: .92rem; line-height: 1.75; }
+  .deva-lines span { display: inline-block; margin: 0 .15rem; }
+  .br-desk { display: none; }
+  .hero-title { font-size: clamp(2rem, 10.5vw, 2.6rem); }
+  .hero-sub { font-size: 1.1rem; }
+
+  /* invitation card */
+  .card { padding: 2.6rem 1.3rem 2.4rem; border-radius: 18px; }
+  .card::before { inset: 8px; }
+  .card::after { inset: 13px; }
+  .corner { width: 46px; height: 46px; }
+  .invite .lead { font-size: 1.15rem; line-height: 1.65; }
+  .company { font-size: 1.2rem; }
+  .divider { margin: 1.4rem auto; }
+  .blessing { font-size: 1.05rem; }
+  .parents { font-size: 1.3rem; }
+
+  /* date */
+  .date-hero { gap: .5rem; margin-bottom: 2rem; }
+  .dh-side { font-size: .6rem; letter-spacing: .15em; padding: .55rem 0; }
+  .dh-day { font-size: 4.6rem; }
+  .countdown { gap: .45rem; margin-top: 2.2rem; }
+  .cd { width: auto; flex: 1; max-width: 84px; padding: .8rem .2rem .65rem; border-radius: 14px; }
+  .cd span { font-size: 1.7rem; }
+  .cd small { font-size: .55rem; letter-spacing: .12em; }
+
+  /* buttons: full-width, thumb friendly */
+  .btn-row { flex-direction: column; align-items: stretch; gap: .7rem; width: 100%; max-width: 340px; margin-left: auto; margin-right: auto; }
+  .venue-info .btn-row { align-items: stretch; }
+  .btn { justify-content: center; min-height: 50px; padding: .8rem 1.2rem; font-size: .78rem; }
+
+  /* hosts */
+  .hosts .host-name { font-size: 1.75rem; }
+  .wishers { flex-direction: column; align-items: center; gap: .6rem; }
+  .wishers li { min-width: 220px; font-size: 1.15rem; }
+
+  /* venue */
+  .venue-card { border-radius: 18px; }
+  .venue-info { padding: 1.8rem 1.1rem; }
+  .venue-info p { font-size: 1.15rem; }
+  .map-wrap { min-height: 280px; }
+
+  .footer { padding: 3rem 16px 2rem; }
+  .footer-text { font-size: 1.15rem; }
+}
+
+/* very small phones (≤360px) */
+@media (max-width: 360px) {
+  .deity-ring { width: 64px; height: 64px; }
+  .deity-ring.big { width: 82px; height: 82px; }
+  .deva { font-size: .66rem; }
+  .deity-ring.big .deva { font-size: .76rem; }
+  .hero-title { font-size: 1.85rem; }
+  .cd span { font-size: 1.45rem; }
+  .quickbar a, .quickbar button { font-size: .56rem; }
+}
+
+/* short screens (landscape phones / small heights) */
+@media (max-height: 640px) {
+  .gate-badge { margin: .6rem auto; }
+  .gate-logo { width: 110px; }
+  .gate-content { padding-top: 1.3rem; padding-bottom: 1.2rem; }
+  .btn-open { margin-top: .9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

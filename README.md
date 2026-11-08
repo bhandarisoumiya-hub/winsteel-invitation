@@ -33,5 +33,5 @@ vercel --prod   # production
 ```
 
 ## Customise
-- **Logo:** replace `assets/logo.svg` with the real logo. If it is a PNG, save it as `assets/logo.png` and change the 3 `logo.svg` references in `index.html`.
+- **Logo:** `assets/logo.png` is a cropped copy of `winsteel-logo.png`. The favicon and app icons (`favicon-32.png`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`) and the button seal (`emblem.png`) use the W emblem from the logo.
 - **Text, date and time:** edit `index.html`. The countdown and calendar times are in the `EVENT` object at the top of `js/main.js`.
