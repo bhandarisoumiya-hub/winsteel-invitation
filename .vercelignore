@@ -1,2 +1,5 @@
 *.pdf
 README.md
+/*.png
+/*.jpeg
+/*.jpg
